@@ -1,6 +1,6 @@
 <%= link_to "イベント追加" ,new_calender_path %>
 
-<%= month_calendar calenders: @calenders do |date, calenders| %>
+<%= month_calendar events: @calenders do |date, calenders| %>
   <%= date.day %>
 
   <% calenders.each do |calender| %>
