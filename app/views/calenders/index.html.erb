@@ -3,9 +3,12 @@
 <%= month_calendar events: @calenders do |date, calenders| %>
   <%= date.day %>
 
-  <% calenders.each do |calender| %>
-    <div>
-      <%= calender.title %>
-    </div>
+<div class = "calendar-coler">
+    <% calenders.each do |calender| %>
+      <div>
+        <%= calender.title %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
