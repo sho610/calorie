@@ -1,14 +1,20 @@
 <%= link_to "イベント追加" ,new_calender_path %>
 
+<div>
+  <%= link_to "topページ",root_path %>
+</div>
+
+
 <%= month_calendar events: @calenders do |date, calenders| %>
   <%= date.day %>
 
 <div class = "calendar-coler">
     <% calenders.each do |calender| %>
       <div>
-        <%= calender.title %>
+        <%= link_to calender.title ,calender_path(calender) %>
       </div>
     <% end %>
   <% end %>
 </div>
+
 

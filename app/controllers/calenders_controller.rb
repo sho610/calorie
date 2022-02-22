@@ -1,15 +1,26 @@
 class CalendersController < ApplicationController
-  def index
-    @calenders = Calender.all
+# before_action :set_user
+
+ def index
+    @calenders =Calender.all
+  end
+
+  def show
+    @calender = Calender.find(params[:id])
   end
 
   def new
-    @calender = Calender.new
+    @calender_new = Calender.new
   end
 
   def create
-    Calender.create(calender_parameter)
-    redirect_to root_path
+    @calender_new = Calender.new(calender_parameter)
+    if @calender_new.save
+      redirect_to root_path
+    else
+      @calenders = Calender.all
+      render "index"
+    end
   end
 
   private
@@ -17,5 +28,9 @@ class CalendersController < ApplicationController
   def calender_parameter
     params.require(:calender).permit(:title, :content, :start_time)
   end
+
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
 
 end
