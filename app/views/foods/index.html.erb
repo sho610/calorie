@@ -1,0 +1,10 @@
+<h1>カロリーカレンダー</h1>
+<div><%= link_to "topページ" , homes_top_path %></div>
+<div><%= link_to "登録",new_food_path %></div>
+<%= month_calendar events: @foods do |date, foods| %>
+  <%= date.day %>
+
+
+
+
+<% end %>

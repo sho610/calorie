@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_030412) do
+ActiveRecord::Schema.define(version: 2022_02_25_032925) do
 
   create_table "calenders", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string "food"
+    t.integer "calorie"
+    t.integer "total_calorie"
+    t.string "eat_timing"
+    t.datetime "eat_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

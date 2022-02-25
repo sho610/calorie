@@ -1,10 +1,10 @@
 <div class = "calender">
     <h1>食べたもの</h1>
 
-    <%= form_with(model: @calender, local: true) do |form| %>
+    <%= form_with(model: @calender_new, local: true) do |form| %>
 
       <div class = "title">
-        <%= form.label :title %>
+        <%= form.label :食べたもの %>
         <%= form.text_field :title %>
       </div>
 

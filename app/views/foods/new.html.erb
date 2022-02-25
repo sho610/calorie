@@ -1,0 +1,26 @@
+<div class = "food">
+  <h1>食べたものを登録</h1>
+
+  <%= form_with(model: @food_new, local: true) do |form| %>
+
+    <div class = "food">
+      <%= form.label :食べたもの %>
+      <%= form.text_field :food %>
+    </div>
+
+    <div class = "calorie">
+      <%= form.label :カロリー %>
+      <%= form.text_field :calorie %>
+    </div>
+
+    <div class = "eat_timing">
+      <%= form.label :"何食？" %>
+      <%= form.text_field :eat_time %>
+    </div>
+
+    <div class = "submit">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+</div>
