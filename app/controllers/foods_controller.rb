@@ -14,14 +14,15 @@ class FoodsController < ApplicationController
       redirect_to foods_path
     else
       @food_new = Food.new
-      render new
+      render "new"
+      byebug
     end
   end
 
   private
 
-  def food_path
-    params.require(:foods).permit(:food, :calorie, :total_calorie, :eat_timing, :eat_time)
+  def food_parameter
+    params.require(:food).permit(:food, :calorie, :eat_timing, :eat_time)
   end
 
 end

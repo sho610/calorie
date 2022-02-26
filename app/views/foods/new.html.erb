@@ -3,6 +3,11 @@
 
   <%= form_with(model: @food_new, local: true) do |form| %>
 
+    <div>
+      <%= form.label :日付 %>
+      <%= form.datetime_select :eat_time %>
+    </div>
+
     <div class = "food">
       <%= form.label :食べたもの %>
       <%= form.text_field :food %>
@@ -10,13 +15,15 @@
 
     <div class = "calorie">
       <%= form.label :カロリー %>
-      <%= form.text_field :calorie %>
+      <%= form.text_field :calorie %>kcal
     </div>
 
     <div class = "eat_timing">
       <%= form.label :"何食？" %>
-      <%= form.text_field :eat_time %>
+      <%= form.select :eat_time ,[["朝ごはん","朝ごはん"],["昼ごはん","昼ごはん"],["晩ごはん","晩ごはん"]] %>
     </div>
+
+
 
     <div class = "submit">
       <%= form.submit %>
