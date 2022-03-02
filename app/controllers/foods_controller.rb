@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
 
   def create
     @food_new = Food.new(food_parameter)
-    if @food_new.save!
+    if @food_new.save
       redirect_to foods_path
     else
       @food_new = Food.new
@@ -21,7 +21,7 @@ class FoodsController < ApplicationController
   private
 
   def food_parameter
-    params.require(:food).permit(:food, :calorie, :eat_timing, :eat_time).merge(user_id: current_user.id)
+    params.require(:food).permit(:id, :food, :calorie, :eat_timing, :start_time).merge(user_id: current_user.id)
   end
 
 end
