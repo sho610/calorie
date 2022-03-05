@@ -6,7 +6,7 @@
 
   <div class = "food-title">
     <% foods.each do |f| %>
-      <%= f.food %>
+      <%=link_to f.food ,food_path(f)%>
   </div>
   <% end %>
 
