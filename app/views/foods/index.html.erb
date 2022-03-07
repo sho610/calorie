@@ -1,15 +1,17 @@
 <h1>カロリーカレンダー</h1>
 <div><%= link_to "topページ" , homes_top_path %></div>
 <div><%= link_to "登録",new_food_path %></div>
-<%= month_calendar events: @foods do |date, foods| %>
-  <%= date.day %>
-
-  <div class = "food-title">
-    <% foods.each do |f| %>
-      <%=link_to f.food ,food_path(f)%>
-  </div>
+<div class = "calender-layout">
+  <%= month_calendar events: @foods do |date, foods| %>
+    <%= date.day %>
+  
+    <div class = "food-title">
+      <% foods.each do |f| %>
+        <%=link_to f.food ,food_path(f)%>
+    </div>
+    <% end %>
+  
+  
+  
   <% end %>
-
-
-
-<% end %>
+</div>
